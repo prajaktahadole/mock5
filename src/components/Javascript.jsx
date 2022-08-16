@@ -35,12 +35,12 @@ export const Javascript = () => {
             {
                   data.items?.map((item)=>{
                     return (
-                        <div key={item.id} className="box">
+                        <div key={item.id} className="card">
                             <div><img className="imgg" src={item.owner.avatar_url} alt="" srcset="" /></div>
                             <h3 className="title">{item.name}</h3>
                             <h3 className="lang">{item.language}</h3>
                             <div className="flexx">
-                                <div> Star - {item.stargazers_count} </div>
+                                <div> ⭐ - {item.stargazers_count} </div>
                                 <div>foks - {item.forks_count}</div>
                             </div>
                         </div>

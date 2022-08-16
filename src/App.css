@@ -4,19 +4,51 @@
 #main{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 90%;
+  width: 100%;
+ 
 
 }
 
 
-.box{
-  width: 20%;
+.card{
+  width: 60%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
 
 }
 
 .flexx{
   display: flex;
+  justify-content: space-between;
 }
 
+
+
+@media only screen and (min-width: 321px) and (max-width:720px)
+        {
+          #main{
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%; 
+          }
+          .card{
+            width: 75%;
+          }
+        }
+        
+
+        @media only screen and (min-width: 0px) and (max-width:320px)
+        {
+          #main{
+            grid-template-columns: repeat(1, 1fr);
+            width: 100%; 
+            margin: auto;
+          }
+
+          .card{
+            width: 100%;
+          }
+            
+        }
+     
 
