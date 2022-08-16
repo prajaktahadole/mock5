@@ -30,23 +30,8 @@ export const All = () => {
 
 
     return (
-        <div className="main_container">
-          
-          {data.map((items) => (
-        <div >
-
-        <div key={items.id} className="main_div">
-       
-        <h1>{items.name}</h1>
-      
-        <h4>Type :  {items.language}</h4>
-        <h4>forks_count :  {items.forks_count}</h4>
-        <h4>star_count :  {items.stargazers_count}</h4>
-        
-      </div>
-        </div>
-        ))}
-          
+        <div>
+            
         </div>
     )
 }
