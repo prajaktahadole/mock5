@@ -3,8 +3,11 @@ import axios from "axios";
 export const HTML = () => {
     const [ data, setData ] = useState([])
     const [ page, setPage ] = useState(1);
-  
+    const [loading, setLoading] = useState(true);
+
+
       const fetchData = async (page=1,sort="desc") => {
+        setLoading(true);
           axios({
             method: "get",
             url: "https://api.github.com/search/repositories?q=stars:%3E1+language:html",
@@ -16,6 +19,7 @@ export const HTML = () => {
           })
             .then((res) => {
               setData(res.data)
+              setLoading(false)
               console.log(res.data)
             })
             .catch((err) => {
@@ -32,6 +36,7 @@ export const HTML = () => {
     return (
         <div>
             <h2>HTML</h2>
+            {loading && <div>loading</div>}
             <div id="main">
             {
                   data.items?.map((item)=>{

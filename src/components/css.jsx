@@ -4,8 +4,12 @@ import axios from "axios";
 export const CSS = () => {
     const [ data, setData ] = useState([])
     const [ page, setPage ] = useState(1);
+    const [loading, setLoading] = useState(true);
+  
   
       const fetchData = async (page=1,sort="desc") => {
+        setLoading(true);
+
           axios({
             method: "get",
             url: "https://api.github.com/search/repositories?q=stars:%3E1+language:css",
@@ -16,6 +20,7 @@ export const CSS = () => {
             },
           })
             .then((res) => {
+                setLoading(false)
               setData(res.data)
               console.log(res.data)
             })
@@ -32,6 +37,7 @@ export const CSS = () => {
 
     return (
         <div>
+             {loading && <div>loading</div>}
             <h2>CSS</h2>
             <div id="main">
             {

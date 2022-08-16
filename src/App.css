@@ -5,8 +5,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
- 
-
 }
 
 
@@ -14,8 +12,8 @@
   width: 60%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-
+  margin-bottom: 25px;
+  padding: 15px;
 }
 
 .flexx{

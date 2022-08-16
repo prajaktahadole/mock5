@@ -4,8 +4,11 @@ import axios from "axios";
 export const Javascript = () => {
     const [ data, setData ] = useState([])
     const [ page, setPage ] = useState(1);
+    const [loading, setLoading] = useState(true);
+
   
       const fetchData = async (page=1,sort="desc") => {
+        setLoading(true);
           axios({
             method: "get",
             url: "https://api.github.com/search/repositories?q=stars:%3E1+language:javascript",
@@ -17,6 +20,7 @@ export const Javascript = () => {
           })
             .then((res) => {
               setData(res.data)
+              setLoading(false)
               console.log(res.data)
             })
             .catch((err) => {
@@ -31,6 +35,7 @@ export const Javascript = () => {
     return (
         <div>
             <h2>Javascript</h2>
+            {loading && <div>loading</div>}
             <div id="main">
             {
                   data.items?.map((item)=>{
