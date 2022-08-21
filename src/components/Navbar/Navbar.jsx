@@ -15,7 +15,7 @@ export const Navbar = () => {
          <div className="navbar">
          
             {nav.map((e,i) =>(
-            <button>
+            <button className="Butnav">
                 <Link key={i} to={e.to} style={{margin:"45px"}}>
                 {e.title}
             </Link>

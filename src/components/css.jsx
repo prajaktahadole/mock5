@@ -37,7 +37,7 @@ export const CSS = () => {
 
     return (
         <div>
-             {loading && <div>loading</div>}
+             {loading && <div  id="load">loading</div>}
             <h2>CSS</h2>
             <div id="main">
             {
@@ -56,6 +56,32 @@ export const CSS = () => {
                   })
                 }
         </div>
+
+        <div className="paginationBox">
+          <Pagination currentPage={page} lastPage={20} onPageChange={setPage}/>
+          <div className="btnBox">
+          <button className="btn" disabled={page===1} onClick={() => setPage(page-1)}>Prev</button>
+          <button className="btn"  onClick={() => setPage(page+1)}>Next</button>
+          </div>
+          </div>
         </div>
     )
+}
+
+
+const Pagination = ({
+  currentPage,
+  lastPage,
+  onPageChange
+}) =>{
+  const arr = new Array(lastPage).fill(0);
+  
+  return(
+    <div>
+      {
+        arr.map((item,page) =>
+        <button className="btn" onClick={() => onPageChange(page+1)} disabled={(page+1)===currentPage}>{page+1}</button>)
+      }
+    </div>
+  )
 }

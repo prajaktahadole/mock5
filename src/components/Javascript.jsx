@@ -35,7 +35,7 @@ export const Javascript = () => {
     return (
         <div>
             <h2>Javascript</h2>
-            {loading && <div>loading</div>}
+            {loading && <div  id="load">loading</div>}
             <div id="main">
             {
                   data.items?.map((item)=>{
@@ -53,6 +53,33 @@ export const Javascript = () => {
                   })
                 }
             </div>
+
+            <div className="paginationBox">
+          <Pagination currentPage={page} lastPage={20} onPageChange={setPage}/>
+          <div className="btnBox">
+          <button className="btn" disabled={page===1} onClick={() => setPage(page-1)}>Prev</button>
+          <button className="btn"  onClick={() => setPage(page+1)}>Next</button>
+          </div>
+          </div>
+
         </div>
     )
+}
+
+
+const Pagination = ({
+  currentPage,
+  lastPage,
+  onPageChange
+}) =>{
+  const arr = new Array(lastPage).fill(0);
+  
+  return(
+    <div>
+      {
+        arr.map((item,page) =>
+        <button className="btn" onClick={() => onPageChange(page+1)} disabled={(page+1)===currentPage}>{page+1}</button>)
+      }
+    </div>
+  )
 }

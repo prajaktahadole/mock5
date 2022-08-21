@@ -3,16 +3,24 @@
     width: 80%;
     margin: auto;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-around;
 }
 
 
-button{
-    border: 1px solid ;
-    border-radius: 15px ;
-    background-color: teal;
-    color: whitesmoke;
+.Butnav{
+    background-color: #16003B;
+    width: 15%;
+    height: 45px;
+    border-radius: 25px;
+    text-decoration-color: aqua;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    margin-right: 30px;
+    padding: 12px;
+
+   
     
 }
